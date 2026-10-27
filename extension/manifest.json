@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Inha iClass 다운로더",
+  "version": "2.1",
+  "description": "아이클래스(learn.inha.ac.kr) 강의자료 원본/PDF 다운로드 + 강의영상 m3u8 링크 추출.",
+  "content_scripts": [
+    {
+      "matches": ["*://learn.inha.ac.kr/local/ubdoc/*"],
+      "js": ["ubdoc.js"]
+    },
+    {
+      "matches": ["*://learn.inha.ac.kr/mod/vod/viewer.php*"],
+      "js": ["vod.js"]
+    },
+    {
+      "matches": [
+        "*://doc.coursemos.co.kr/view/*",
+        "*://*.coursemos.co.kr/view/*"
+      ],
+      "all_frames": true,
+      "js": ["pdf.js", "content.js"]
+    }
+  ]
+}
